@@ -1,6 +1,40 @@
-#snake {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  background-color: green;
+body {
+  background: url(./Images/background.jpg);
+  background-size: 10px;
+}
+main {
+  justify-items: center;
+}
+h1 {
+  color: cyan;
+  font-weight: bold;
+  text-align: center;
+  font-size: 10vmin;
+  text-shadow: cyan 0 0 10px;
+}
+.projects-container {
+  display: grid;
+  margin: 5%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+}
+.project {
+  border-radius: 2vmin;
+  width: 50vmin;
+  height: 30vmin;
+  margin: 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: cyan 0 0 20px;
+}
+.project a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 5vmin;
+  top: 40%;
+  position: relative;
+  color: cyan;
+  text-shadow: cyan 0 0 10px;
 }

@@ -1,0 +1,97 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+main {
+  background-color: rgb(121, 197, 7);
+  height: 100vmin;
+  width: 100vmin;
+  display: grid;
+  grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(32, 1fr);
+}
+
+.snake {
+  background-color: darkgreen;
+  border: 0.25vmin solid black;
+  border-radius: 1vmin;
+}
+.food {
+  background-color: red;
+  border: 0.25vmin solid black;
+  border-radius: 50%;
+}
+
+.buttons-container button {
+  display: none;
+  margin-right: 5vmin;
+  border: none;
+  height: 10vmin;
+  width: 15vmin;
+  background: url("./Graphics/Arrow.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.up {
+  transform: rotate(-90deg);
+}
+.down {
+  transform: rotate(90deg);
+}
+.right {
+  transform: rotate(-180deg);
+}
+.crash-screen {
+  display: none;
+  height: 90vmin;
+  width: 90vmin;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+.show {
+  display: block;
+}
+.crash-screen button {
+  margin-top: 50%;
+  width: 50vmin;
+  height: 15vmin;
+  background: transparent;
+  border: green 1vmin dashed;
+  color: green;
+  font-weight: bold;
+  font-family: fantasy;
+  font-size: 10vmin;
+}
+.crash-screen h1 {
+  color: green;
+  font-size: 5vmin;
+}
+#score {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+}
+@media screen and (max-width: 768px) {
+  .buttons-container button {
+    display: inline;
+  }
+  .crash-screen {
+    height: 70vmin;
+  }
+  .crash-screen button {
+    margin-top: 30%;
+  }
+}

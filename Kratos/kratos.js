@@ -1,5 +1,5 @@
 const FRAME_DELAY = 100;
-const JUMP_SPEED = 0.45;
+const JUMP_SPEED = 0.35;
 const GRAVITY = 0.001;
 
 let JUMP_VELOCITY = 0;

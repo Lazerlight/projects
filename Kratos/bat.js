@@ -4,23 +4,23 @@ import {
   setCustomProperty,
 } from "./CustomFunctions.js";
 
-const SPEED = 0.05;
-const OBSTACLE_MIN_INTERVAL = 500;
-const OBSTACLE_MAX_INTERVAL = 2000;
+const SPEED = 0.15;
+const OBSTACLE_MIN_INTERVAL = 6000;
+const OBSTACLE_MAX_INTERVAL = 12000;
 
 let upcomingObstacleInterval;
 
 const mainEl = document.querySelector("main");
 
-export function renderObstacle(delta, speedScale) {
-  document.querySelectorAll(".obstacle").forEach((e) => {
+export function renderBat(delta, speedScale) {
+  document.querySelectorAll(".bat").forEach((e) => {
     incCustomProperty(e, "--left", delta * speedScale * SPEED * -1);
     if (getCustomProperty(e, "--left") <= -100) {
       e.remove();
     }
   });
   if (upcomingObstacleInterval <= 0) {
-    createObstacle();
+    createBat();
     upcomingObstacleInterval =
       randomNumberBetween(OBSTACLE_MIN_INTERVAL, OBSTACLE_MAX_INTERVAL) /
       speedScale;
@@ -28,23 +28,23 @@ export function renderObstacle(delta, speedScale) {
   upcomingObstacleInterval -= delta;
 }
 
-export function setupObstacle() {
+export function setupBat() {
   upcomingObstacleInterval = OBSTACLE_MIN_INTERVAL;
-  document.querySelectorAll(".obstacle").forEach((e) => {
+  document.querySelectorAll(".bat").forEach((e) => {
     e.remove();
   });
 }
 
-export function obstacleRect() {
-  return [...document.querySelectorAll(".obstacle")].map((e) => {
+export function batRect() {
+  return [...document.querySelectorAll(".bat")].map((e) => {
     return e.getBoundingClientRect();
   });
 }
 
-function createObstacle() {
+function createBat() {
   const Obstacle = document.createElement("img");
-  Obstacle.src = "./Graphics/spike.png";
-  Obstacle.classList.add("obstacle");
+  Obstacle.src = "./Graphics/bat.gif";
+  Obstacle.classList.add("bat");
   setCustomProperty(Obstacle, "--left", 100);
   mainEl.append(Obstacle);
 }

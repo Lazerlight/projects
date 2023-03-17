@@ -1,0 +1,159 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: wheat;
+  --secondary-color: black;
+}
+
+body {
+  background-color: var(--secondary-color);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  position: relative;
+  text-align: center;
+  height: 90vmin;
+  width: 100vmin;
+  overflow: hidden;
+  /* background-color: var(--primary-color); */
+}
+.score {
+  font-size: 2vmin;
+  color: rgba(255, 255, 255, 0.3);
+}
+.starting-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.8vmin;
+}
+.lose-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5vmin;
+  width: 90%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 25vmin;
+}
+
+main button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3vmin;
+  border-radius: 1vmin;
+  border: none;
+  width: 40%;
+  height: 20%;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
+}
+main button:hover {
+  background-color: transparent;
+  transition: 0.5s;
+  width: 50%;
+  height: 25%;
+  font-size: 4vmin;
+}
+.mobile-buttons {
+  margin-top: 5vmin;
+  display: flex;
+  gap: 10vmin;
+}
+.right-button,
+.left-button {
+  width: 30vmin;
+  height: 10vmin;
+  border: none;
+  border-radius: 1vmin;
+  background: #141c24;
+}
+.hidden {
+  display: none;
+}
+.humanoid {
+  --left: 50;
+  background-image: url(./Graphics/SpaceShip1.png);
+  background-size: 100% 100%;
+  width: 10vmin;
+  height: 15vmin;
+  position: absolute;
+  bottom: 0;
+  left: calc(var(--left) * 1%);
+  transform: translateX(-50%);
+}
+.spear {
+  --top: -20;
+  background-image: url(./Graphics/Asteroid.png);
+  background-size: 100% 100%;
+  width: 10vmin;
+  height: 10vmin;
+  position: absolute;
+  top: calc(var(--top) * 1%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.warp {
+  --top: -50;
+  background-image: url(./Graphics/warp.png);
+  background-size: 100% 100%;
+  width: 10vmin;
+  height: 10vmin;
+  position: absolute;
+  top: calc(var(--top) * 1%);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animationRotation infinite linear 2s;
+}
+#UFO {
+  background-image: url(./Graphics/UFO.png);
+  background-size: 100% 100%;
+}
+.background {
+  --top: 0;
+  height: 100%;
+  width: 100%;
+  background: url(./Graphics/background.png);
+  position: absolute;
+  z-index: -1;
+  top: calc(var(--top) * 1%);
+}
+
+@keyframes animationRotation {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .mobile-buttons {
+    display: none;
+  }
+}

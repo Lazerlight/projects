@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Linking the CSS file -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Linking the Icon of the head element -->
+    <link rel="icon" href="./Graphics/favicon.ico">
+    <title>Galaxy Glide</title>
+</head>
+
+<body>
+    <!-- Main Element -->
+    <main>
+        <div class="score">
+            <h2 class="scoreEl">Score: 0</h2>
+        </div>
+        <!-- Two background elements to implement the illusion of a moving space -->
+        <div class="background"></div>
+        <div class="background"></div>
+        <!-- Warp element -->
+        <div class="warp"></div>
+        <!-- Obstacles elements under class "spear" -->
+        <div class="spear" id="UFO"></div>
+        <div class="spear"></div>
+        <div class="spear"></div>
+        <div class="spear"></div>
+        <div class="spear"></div>
+        <!-- Player element under class "humanoid" -->
+        <div class="humanoid"></div>
+        <!-- starting message element -->
+        <div class="starting-message">
+            <h1>Press Any Key To Start</h1>
+        </div>
+        <!-- game over screen element -->
+        <div class="lose-message hidden">
+            <h1>Game Over</h1>
+            <h2>You Lost</h2>
+            <button>Restart</button>
+        </div>
+    </main>
+    <!-- A class containing all buttons for mobile devices  -->
+    <div class="mobile-buttons">
+        <button class="right-button"></button>
+        <button class="left-button"></button>
+    </div>
+    <!-- Linking the JavaScript file -->
+    <script src="./script.js" defer type="module"></script>
+</body>
+
+</html>
